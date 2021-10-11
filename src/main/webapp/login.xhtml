@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/WEB-INF/templates/master.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:outputLabel for="un" value="Username:"/>
+            <h:inputText id="un" value="#{loginBean.username}"/>
+            <h:message for="un"/>
+
+            <h:outputLabel for="pw" value="Password:"/>
+            <h:inputSecret id="pw" value="#{loginBean.password}"/>
+            <h:message for="un"/>
+
+            <h:messages globalOnly="true"/>
+            <h:commandButton value="Log in" action="#{loginBean.login()}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

@@ -9,6 +9,9 @@
 </h:head>
 <h:body>
     <header>
+        <h:form rendered="#{not empty request.userPrincipal}">
+            <h:commandButton value="Log out" action="#{logoutBean.logout(request)}"/>
+        </h:form>
         <nav>
             <ul>
                 <li><h:link outcome="index" value="Home"/></li>
