@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/WEB-INF/templates/master.xhtml">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="id" value="#{projectDetailBean.id}"/>
+            <f:viewAction action="#{projectDetailBean.load()}"/>
+        </f:metadata>
+    </ui:define>
+    <ui:define name="content">
+        <h1>#{projectDetailBean.project.title}</h1>
+        <p>#{projectDetailBean.project.id}</p>
+        <p>#{projectDetailBean.project.hours}</p>
+    </ui:define>
+</ui:composition>
+</html>

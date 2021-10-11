@@ -19,4 +19,12 @@ public class TRMBean {
         return entityManager.createQuery(
                 "select p from Project p", Project.class).getResultList();
     }
+
+    public Project getProjectById(Long id){
+        return entityManager.createQuery(
+                "select p from Project p where p.id = ?1",
+                Project.class)
+                .setParameter(1, id)
+                .getSingleResult();
+    }
 }
