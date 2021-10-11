@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>New project</title>
+    <h:outputStylesheet name="inetum-style.css"></h:outputStylesheet>
+</h:head>
+<h:body>
+    <h1>New project</h1>
+    <h:form>
+
+        <h:outputLabel for="title" value="Title:"/>
+        <h:inputText id="title" value="#{newProjectBean.project.title}"/>
+        <h:message for="title"/>
+
+        <br/>
+
+        <h:outputLabel for="hours" value="Hours:"/>
+        <h:inputText id="hours" value="#{newProjectBean.project.hours}"/>
+        <h:message for="hours"/>
+
+        <h:commandButton value="Create" action="#{newProjectBean.create}"/>
+    </h:form>
+</h:body>
+</html>
